@@ -74,6 +74,8 @@ export class IFrameContent extends Behaviour {
 
 		this.cssScene.add(obj);
 		this.cssObj = obj;
+		// Set to Invisible by Default
+		this.cssObj.visible = false;
 
 		// attach to post_render events to get perfect sync to the camera
 		this.context.post_render_callbacks.push(this.onPostRender.bind(this));
@@ -88,20 +90,12 @@ export class IFrameContent extends Behaviour {
 		setWorldQuaternion(this.cssObj, getWorldQuaternion(this.gameObject));
 		this.cssObj.quaternion.multiply(this.rotate90);
 
-		// calculate facing amount - are we looking at the object?
-		const cam = this.context.mainCamera!;
-		const obj = this.gameObject;
-		var dirToCamera = cam.position.clone().sub(this.gameObject.position).normalize();
-		var normal = obj.getWorldDirection(new Vector3());
-		const dot = dirToCamera.dot(normal);
-
-		console.log(dot);
-		
-
-		// TODO Render only if Camera is Nearby and in Front
-		// TODO Scroll when Zoomed in and Visible
-		// only render if approx. facing the camera
-		this.cssObj.visible = (dot < 0.35 || dot > 0.45);
 		this.cssRenderer.render(this.cssScene, this.context.mainCamera!);
+	}
+
+	public SetVisibilityIFrame(visibility : boolean) {
+		this.cssObj.visible = visibility;
+		console.log(visibility);
+		
 	}
 }

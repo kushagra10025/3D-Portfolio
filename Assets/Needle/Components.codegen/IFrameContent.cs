@@ -12,6 +12,7 @@ namespace Needle.Typescript.GeneratedComponents
 		public float @borderRadius = 50f;
 		public void start(){}
 		public void onPostRender(){}
+		public void SetVisibilityIFrame(bool @visibility){}
 	}
 }
 
