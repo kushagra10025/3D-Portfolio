@@ -21,7 +21,7 @@ export class IFrameContent extends Behaviour {
 
 	start() {
 		const div = document.createElement('div');
-		div.innerHTML = `<iframe width="1000" height="1000" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; xr-spatial-tracking; xr" allowfullscreen></iframe>`;
+		div.innerHTML = `<iframe width="1000" height="1000" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>`;
 		div.style.zIndex = "10000";
 		div.style.position = "absolute";
 		div.style.pointerEvents = "initial";
@@ -49,7 +49,7 @@ export class IFrameContent extends Behaviour {
 		div.style.position = "absolute";
 		if (this.borderRadius > 0)
 			div.style.borderRadius = this.borderRadius + "px";
-		div.style.overflow = "hidden";
+		div.style.overflow = "visible";
 		div.style.pointerEvents = "initial";
 
 		document.body.append(div);
