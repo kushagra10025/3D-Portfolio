@@ -7,11 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_HouseMat
+  m_Name: WorkstationMat
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
+  - _OCCLUSIONMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -24,11 +25,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: c32693e478452864b897a2b13462f7e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 63de5feccbda18047a1c6b44fdddf854, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 7befd301e24dd70408280de3d03e3da6, type: 3}
+        m_Texture: {fileID: 2800000, guid: da219e9a520411d4587522702c4eba45, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -48,15 +49,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c32693e478452864b897a2b13462f7e5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 63de5feccbda18047a1c6b44fdddf854, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: bc65370b70d3df442a1d321fddb858c7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 708aa24efa31fe444a5823672857a3de, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: aa98ee8e869f32c4e89eb0caa23b3d3e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -96,7 +97,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _OcclusionStrength: 1
+    - _OcclusionStrength: 0.75
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
