@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@needle-tools/engine": "file:../../Library/PackageCache/com.needle.engine@2.56.1-pre/package~",
+    "gsap": "^3.11.4",
     "three": "file:../../Library/PackageCache/com.needle.engine@2.56.1-pre/package~/node_modules/three"
   },
   "devDependencies": {
