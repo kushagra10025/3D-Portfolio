@@ -124,6 +124,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &41423710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1143489516812984894}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1460004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.099
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.504
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+        type: 3}
+      propertyPath: m_Name
+      value: Props_Ampersand
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11d8e58c7601bb34696be2c42bdc7cf0, type: 3}
+--- !u!4 &41423711 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11d8e58c7601bb34696be2c42bdc7cf0,
+    type: 3}
+  m_PrefabInstance: {fileID: 41423710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &44126220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2783,7 @@ GameObject:
   - component: {fileID: 2531179889569820507}
   - component: {fileID: 6929635886006558057}
   m_Layer: 0
-  m_Name: Mast_04
+  m_Name: Mast_Interests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2829,7 +2904,9 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7375059858572107391}
+  - {fileID: 41423711}
   m_Father: {fileID: 8464876560534642883}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2987,7 +3064,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8464876560534642883}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1748429289885240662
 Transform:
@@ -3091,7 +3168,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8464876560534642883}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2531179889569820507
 MeshRenderer:
@@ -3260,9 +3337,8 @@ GameObject:
   - component: {fileID: 7375059858572107391}
   - component: {fileID: 1649085497497250120}
   - component: {fileID: 5540701471013873428}
-  - component: {fileID: 7375059858572107392}
   m_Layer: 0
-  m_Name: Mast_03
+  m_Name: Mast_Projects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3571,7 +3647,7 @@ GameObject:
   - component: {fileID: 4788725995884430057}
   - component: {fileID: 7070385989780818958}
   m_Layer: 0
-  m_Name: Mast_01
+  m_Name: Mast_TheBlueprint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3700,7 +3776,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8464876560534642883}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5027121717717383023
 GameObject:
@@ -3842,7 +3918,7 @@ GameObject:
   - component: {fileID: 728652412947002596}
   - component: {fileID: 5655851923161354750}
   m_Layer: 0
-  m_Name: Mast_05
+  m_Name: Mast_ContactMe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4416,71 +4492,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3045960410952131309}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8464876560534642883}
-  m_RootOrder: 2
+  m_Father: {fileID: 1143489516812984894}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7375059858572107392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3045960410952131309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 706762912}
-        m_TargetAssemblyTypeName: Needle.Typescript.GeneratedComponents.AdvancedCamera,
-          Assembly-CSharp
-        m_MethodName: SetTransitionToProjectView
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: OpenLid
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!33 &7563556934666560743
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4575,7 +4594,7 @@ GameObject:
   - component: {fileID: 1626976391383695515}
   - component: {fileID: 8151698704176649909}
   m_Layer: 0
-  m_Name: Mast_02
+  m_Name: Mast_AboutMe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4702,7 +4721,6 @@ Transform:
   m_Children:
   - {fileID: 1693381524520899298}
   - {fileID: 1143489516812984894}
-  - {fileID: 7375059858572107391}
   - {fileID: 2481981544462358809}
   - {fileID: 1736901881857371760}
   - {fileID: 4945546470128125196}
