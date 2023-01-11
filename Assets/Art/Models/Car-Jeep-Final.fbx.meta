@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3aca0e33110a66644b93644df0a067c0
+guid: 18ec833a3739bfa41ba3613c31a79430
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: SoftBoard_Mat
-    second: {fileID: 2100000, guid: 739e177836db96c469bb2a246f251495, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Workstation_Mat
-    second: {fileID: 2100000, guid: 96cb90f4a6496904fa792923fe8f52e6, type: 2}
+      name: Car_Mat
+    second: {fileID: 2100000, guid: ee229c250b264aa4bb15c466f70f1094, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
