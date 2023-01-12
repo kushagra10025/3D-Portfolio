@@ -7,12 +7,20 @@ export class IFrameContent extends Behaviour {
 
 	@serializable()
 	url : string = "https://kushagra10025.github.io";
-	
+
+	@serializable()
+	uniqueID : string = "default";
+
+	// Set Visible if Scrolling Distance Matters
+	// Set Hidden if Scrolling Distance doesn't matter and roundness matters
+	@serializable()
+	overflowMode : string = "visible";	
 	@serializable()
 	pixelsPerUnit : number = 500;
 
+	// Set Border Radius CSS Style
 	@serializable()
-	borderRadius : number = 50;
+	borderRadius : string = "";
 
 	private cssRenderer !: CSS3DRenderer;
 	private cssScene !: Scene;
@@ -22,6 +30,7 @@ export class IFrameContent extends Behaviour {
 	start() {
 		const div = document.createElement('div');
 		div.innerHTML = `<iframe width="1000" height="1000" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>`;
+		div.setAttribute('id', this.uniqueID);
 		div.style.zIndex = "10000";
 		div.style.position = "absolute";
 		div.style.pointerEvents = "initial";
@@ -29,7 +38,6 @@ export class IFrameContent extends Behaviour {
 		const iframe = div.querySelector('iframe')!;
 		// slight delay for opening after page load
 		iframe.addEventListener('load', () => {
-			console.log("Loaded IFrame Loader");
 			// setTimeout(() => {
 			// 	this.animator?.SetBool("Open", true);
 			// }, 1000);
@@ -47,9 +55,9 @@ export class IFrameContent extends Behaviour {
 
 		// absolute positioning and round corners
 		div.style.position = "absolute";
-		if (this.borderRadius > 0)
-			div.style.borderRadius = this.borderRadius + "px";
-		div.style.overflow = "visible";
+		if (this.borderRadius !== "")
+			div.style.borderRadius = this.borderRadius;
+		div.style.overflow = this.overflowMode;
 		div.style.pointerEvents = "initial";
 
 		document.body.append(div);
