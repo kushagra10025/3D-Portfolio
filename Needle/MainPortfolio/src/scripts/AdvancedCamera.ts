@@ -1,157 +1,147 @@
-import { Behaviour, serializable } from "@needle-tools/engine";
-import { OrbitControls } from "@needle-tools/engine";
-import { getWorldPosition } from "@needle-tools/engine/engine/engine_three_utils";
-import gsap from "gsap";
+import { Behaviour, OrbitControls, serializable } from "@needle-tools/engine";
 import { Object3D, Vector3 } from "three";
+import gsap from "gsap";
 
 export class AdvancedCamera extends Behaviour {
 
-	// TODO Clear this Script and Redo the Transitions using GSAP
-
 	@serializable(Object3D)
-	lookAtObject !: Object3D;
-
-	@serializable(Object3D)
-	cameraObject !: Object3D;
-
-	@serializable(OrbitControls)
-	controls !: OrbitControls;
+	public lookAtObject !: Object3D;
 
 	@serializable(Vector3)
-	directionMastLookAt : Vector3 = new Vector3(5.5, 2.5, 5.85);
+	public directionMastLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
-	directionMastCameraPositon : Vector3 = new Vector3(7.75, 3.15, 8.85);
+	public directionMastCamPos : Vector3 = new Vector3(0, 0, 0);
 
 	@serializable(Vector3)
-	blueprintViewLookAt : Vector3 = new Vector3(0, 3, 0);
+	public blueprintViewLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
-	blueprintsViewCameraPosition : Vector3 = new Vector3(10, 10, 10);
+	public blueprintViewCamPos : Vector3 = new Vector3(0, 0, 0);
 
 	@serializable(Vector3)
-	aboutMeViewLookAt : Vector3 = new Vector3(2.25, 4.10, 1.97);
+	public aboutProjectViewLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
-	aboutMeViewCameraPosition : Vector3 = new Vector3(2, 4,-1);
+	public aboutProjectViewCamPos : Vector3 = new Vector3(0, 0, 0);
 
 	@serializable(Vector3)
-	projectViewLookAt : Vector3 = new Vector3(2.25, 4.10, 1.97);
+	public interestsViewLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
-	projectViewCameraPosition : Vector3 = new Vector3(2, 4,-1);
+	public interestsViewCamPos : Vector3 = new Vector3(0, 0, 0);
 
-	private transitions : any;
+	@serializable(Vector3)
+	public contactViewLookAt : Vector3 = new Vector3(0, 0, 0);
+	@serializable(Vector3)
+	public contactViewCamPos : Vector3 = new Vector3(0, 0, 0);
+
+	private _controls !: OrbitControls;
+	private _cameraObject !: Object3D;
+
+	private _transitions : any;
 
 	onEnable(): void {
+		this._controls = this.gameObject.getComponent(OrbitControls)!;
+		this._cameraObject = this.gameObject;
 		this.SetTransitions();
 	}
 
 	start(): void {
-		this.transitions.initialView();
+		this.SetDirectionMastView();
 	}
 
 	update(): void {
+		
 	}
 
+	// Custom Private Functions
 	private SetTransitions() {
-		this.transitions = {};
+		if(this._controls.controls == null)
+			return;
+		const threeOrbit = this._controls.controls;
+		this._transitions = {};
 
-		// Initial View
-		this.transitions.initialView = () => {
-			this.controls.controls!.enableZoom = false;
-			this.controls.controls!.enableRotate = false;
+		// Direction Mast View
+		this._transitions.directionMastView = () => {
+			threeOrbit.enableZoom = false;
+			threeOrbit.enableRotate = false;
 
-			gsap.to(this.lookAtObject.position, {
-				x : this.directionMastLookAt.x,
-				y : this.directionMastLookAt.y,
-				z : this.directionMastLookAt.z,
-				duration : 1.5
-			});
-			gsap.to(this.cameraObject.position, {
-				x : this.directionMastCameraPositon.x,
-				y : this.directionMastCameraPositon.y,
-				z : this.directionMastCameraPositon.z,
-				duration : 1.5
-			});
+			this.TranstionTemplate(1.5, this.directionMastLookAt, this.directionMastCamPos);
 
-			// this.controls.controls!.enableZoom = true;
-			// this.controls.controls!.enableRotate = true;
-			// this.controls.controls!.autoRotate = true;
+			threeOrbit.enableZoom = true;
 		};
 
-		// The Blueprint View
-		this.transitions.theblueprint = () => {
-			this.controls.controls!.enableZoom = false;
-			this.controls.controls!.enableRotate = false;
+		// Blueprint View
+		this._transitions.blueprintView = () => {
+			threeOrbit.enableZoom = false;
+			threeOrbit.enableRotate = false;
 
-			gsap.to(this.lookAtObject.position, {
-				x : this.blueprintViewLookAt.x,
-				y : this.blueprintViewLookAt.y,
-				z : this.blueprintViewLookAt.z,
-				duration : 1.5
-			});
-			gsap.to(this.cameraObject.position, {
-				x : this.blueprintsViewCameraPosition.x,
-				y : this.blueprintsViewCameraPosition.y,
-				z : this.blueprintsViewCameraPosition.z,
-				duration : 1.5
-			});
+			this.TranstionTemplate(1.5, this.blueprintViewLookAt, this.blueprintViewCamPos);
 
-			this.controls.controls!.enableZoom = true;
-			this.controls.controls!.enableRotate = true;
-			this.controls.controls!.autoRotate = true;
+			threeOrbit.enableZoom = true;
+			threeOrbit.enableRotate = true;
+			threeOrbit.autoRotate = true;
 		};
 
-		// The About Me View
-		this.transitions.aboutMeView = () => {
-			this.controls.controls!.enableZoom = false;
-			this.controls.controls!.enableRotate = false;
+		// About & Projects View
+		this._transitions.aboutprojectsView = () => {
+			threeOrbit.enableZoom = false;
+			threeOrbit.enableRotate = false;
 
-			gsap.to(this.lookAtObject.position, {
-				x : this.aboutMeViewLookAt.x,
-				y : this.aboutMeViewLookAt.y,
-				z : this.aboutMeViewLookAt.z,
-				duration : 1.5
-			});
-			gsap.to(this.cameraObject.position, {
-				x : this.aboutMeViewCameraPosition.x,
-				y : this.aboutMeViewCameraPosition.y,
-				z : this.aboutMeViewCameraPosition.z,
-				duration : 1.5
-			});
+			this.TranstionTemplate(1.5, this.aboutProjectViewLookAt, this.aboutProjectViewCamPos);
 
-			this.controls.controls!.enableZoom = true;
-			this.controls.controls!.enableRotate = false;
+			threeOrbit.enableZoom = true;
+
 		};
 
-		// The Project View
-		this.transitions.projectView = () => {
-			this.controls.controls!.enableZoom = false;
-			this.controls.controls!.enableRotate = false;
+		// Interests View
+		this._transitions.interestsView = () => {
+			threeOrbit.enableZoom = false;
+			threeOrbit.enableRotate = false;
 
-			gsap.to(this.lookAtObject.position, {
-				x : this.projectViewLookAt.x,
-				y : this.projectViewLookAt.y,
-				z : this.projectViewLookAt.z,
-				duration : 1.5
-			});
-			gsap.to(this.cameraObject.position, {
-				x : this.projectViewCameraPosition.x,
-				y : this.projectViewCameraPosition.y,
-				z : this.projectViewCameraPosition.z,
-				duration : 1.5
-			});
+			this.TranstionTemplate(1.5, this.interestsViewLookAt, this.interestsViewCamPos);
 
-			this.controls.controls!.enableZoom = true;
-			this.controls.controls!.enableRotate = false;
-		};
+			threeOrbit.enableZoom = true;
+		}
+
+		// Contact View
+		this._transitions.contactsView = () => {
+			threeOrbit.enableZoom = false;
+			threeOrbit.enableRotate = false;
+
+			this.TranstionTemplate(1.5, this.contactViewLookAt, this.contactViewCamPos);
+
+			threeOrbit.enableZoom = true;
+		}
 	}
 
-	public SetTransitionToBlueprintView() {
-		this.transitions.theblueprint();
-	}
-	public SetTransitionToAboutMeView() {
-		this.transitions.aboutMeView();
-	}
-	public SetTransitionToProjectView() {
-		this.transitions.projectView();
+	private TranstionTemplate(duration : number, lookAtVector : Vector3, cameraPositionVector : Vector3) {
+		gsap.to(this.lookAtObject.position, {
+			x : lookAtVector.x,
+			y : lookAtVector.y,
+			z : lookAtVector.z,
+			duration : duration
+		});
+
+		gsap.to(this._cameraObject.position, {
+			x : cameraPositionVector.x,
+			y : cameraPositionVector.y,
+			z : cameraPositionVector.z,
+			duration : duration
+		});
 	}
 
+	// Custom Public Functions
+	public SetDirectionMastView() {
+		this._transitions.directionMastView();
+	}
+	public SetBlueprintView() {
+		this._transitions.blueprintView();
+	}
+	public SetAboutProjectsView() {
+		this._transitions.aboutprojectsView();
+	}
+	public SetInterestsView() {
+		this._transitions.interestsView();
+	}
+	public SetContactView() {
+		this._transitions.contactsView();
+	}
 }
