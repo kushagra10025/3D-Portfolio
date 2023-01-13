@@ -1,4 +1,4 @@
-import { Behaviour, OrbitControls, serializable } from "@needle-tools/engine";
+import { Behaviour, OrbitControls, serializable, GameObject } from "@needle-tools/engine";
 import { Object3D, Vector3 } from "three";
 import gsap from "gsap";
 
@@ -21,16 +21,22 @@ export class AdvancedCamera extends Behaviour {
 	public aboutProjectViewLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
 	public aboutProjectViewCamPos : Vector3 = new Vector3(0, 0, 0);
+	@serializable(GameObject)
+	public aboutProjectGoBackBtn !: GameObject;
 
 	@serializable(Vector3)
 	public interestsViewLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
 	public interestsViewCamPos : Vector3 = new Vector3(0, 0, 0);
+	@serializable(GameObject)
+	public interestsGoBackBtn !: GameObject;
 
 	@serializable(Vector3)
 	public contactViewLookAt : Vector3 = new Vector3(0, 0, 0);
 	@serializable(Vector3)
 	public contactViewCamPos : Vector3 = new Vector3(0, 0, 0);
+	@serializable(GameObject)
+	public contactViewGoBackBtn !: GameObject;
 
 	private _controls !: OrbitControls;
 	private _cameraObject !: Object3D;
@@ -63,6 +69,10 @@ export class AdvancedCamera extends Behaviour {
 			threeOrbit.enableZoom = false;
 			threeOrbit.enableRotate = false;
 
+			this.aboutProjectGoBackBtn.activeSelf = false;
+			this.interestsGoBackBtn.activeSelf = false;
+			this.contactViewGoBackBtn.activeSelf = false;
+
 			this.TranstionTemplate(1.5, this.directionMastLookAt, this.directionMastCamPos);
 
 			threeOrbit.enableZoom = true;
@@ -72,6 +82,10 @@ export class AdvancedCamera extends Behaviour {
 		this._transitions.blueprintView = () => {
 			threeOrbit.enableZoom = false;
 			threeOrbit.enableRotate = false;
+
+			this.aboutProjectGoBackBtn.activeSelf = false;
+			this.interestsGoBackBtn.activeSelf = false;
+			this.contactViewGoBackBtn.activeSelf = false;
 
 			this.TranstionTemplate(1.5, this.blueprintViewLookAt, this.blueprintViewCamPos);
 
@@ -87,6 +101,10 @@ export class AdvancedCamera extends Behaviour {
 
 			this.TranstionTemplate(1.5, this.aboutProjectViewLookAt, this.aboutProjectViewCamPos);
 
+			this.aboutProjectGoBackBtn.activeSelf = true;
+			this.interestsGoBackBtn.activeSelf = false;
+			this.contactViewGoBackBtn.activeSelf = false;
+
 			threeOrbit.enableZoom = true;
 
 		};
@@ -98,6 +116,10 @@ export class AdvancedCamera extends Behaviour {
 
 			this.TranstionTemplate(1.5, this.interestsViewLookAt, this.interestsViewCamPos);
 
+			this.aboutProjectGoBackBtn.activeSelf = false;
+			this.interestsGoBackBtn.activeSelf = true;
+			this.contactViewGoBackBtn.activeSelf = false;
+
 			threeOrbit.enableZoom = true;
 		}
 
@@ -107,6 +129,10 @@ export class AdvancedCamera extends Behaviour {
 			threeOrbit.enableRotate = false;
 
 			this.TranstionTemplate(1.5, this.contactViewLookAt, this.contactViewCamPos);
+
+			this.aboutProjectGoBackBtn.activeSelf = false;
+			this.interestsGoBackBtn.activeSelf = false;
+			this.contactViewGoBackBtn.activeSelf = true;
 
 			threeOrbit.enableZoom = true;
 		}

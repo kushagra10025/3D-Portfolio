@@ -14,10 +14,13 @@ namespace Needle.Typescript.GeneratedComponents
 		public UnityEngine.Vector3 @blueprintViewCamPos = new UnityEngine.Vector3(0f, 0f, 0f);
 		public UnityEngine.Vector3 @aboutProjectViewLookAt = new UnityEngine.Vector3(0f, 0f, 0f);
 		public UnityEngine.Vector3 @aboutProjectViewCamPos = new UnityEngine.Vector3(0f, 0f, 0f);
+		public UnityEngine.GameObject @aboutProjectGoBackBtn;
 		public UnityEngine.Vector3 @interestsViewLookAt = new UnityEngine.Vector3(0f, 0f, 0f);
 		public UnityEngine.Vector3 @interestsViewCamPos = new UnityEngine.Vector3(0f, 0f, 0f);
+		public UnityEngine.GameObject @interestsGoBackBtn;
 		public UnityEngine.Vector3 @contactViewLookAt = new UnityEngine.Vector3(0f, 0f, 0f);
 		public UnityEngine.Vector3 @contactViewCamPos = new UnityEngine.Vector3(0f, 0f, 0f);
+		public UnityEngine.GameObject @contactViewGoBackBtn;
 		public void OnEnable(){}
 		public void start(){}
 		public void update(){}
