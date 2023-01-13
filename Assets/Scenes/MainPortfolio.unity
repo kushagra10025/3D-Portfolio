@@ -2508,7 +2508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   url: https://kushagra10025.github.io/Portfolio-Sections/contact/index.html
   uniqueID: contactformdiv
-  overflowMode: hidden
+  overflowMode: visible
   pixelsPerUnit: 900
   borderRadius: 150px 150px 0 0
 --- !u!114 &1623533830
