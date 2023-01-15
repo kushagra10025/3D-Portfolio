@@ -8,12 +8,12 @@
 
 [36mvite v3.2.5 [32mbuilding for production...[36m[39m
 transforming...
-[32m✓[39m 305 modules transformed.
+[32m✓[39m 314 modules transformed.
 rendering chunks...
 [90m[37m[2mdist/[22m[90m[39m[32massets/favicon.8d99ceea.ico  [39m [2m14.73 KiB[22m
 [90m[37m[2mdist/[22m[90m[39m[32mindex.html                   [39m [2m1.00 KiB[22m
 [90m[37m[2mdist/[22m[90m[39m[35massets/index.ba4d5d10.css    [39m [2m1.00 KiB / gzip: 0.48 KiB[22m
-[90m[37m[2mdist/[22m[90m[39m[36massets/index.985bfc3d.js     [39m [33m4241.47 KiB / gzip: 1326.06 KiB[39m
+[90m[37m[2mdist/[22m[90m[39m[36massets/index.d9ce43b7.js     [39m [33m4321.51 KiB / gzip: 1355.85 KiB[39m
 
 > my-project@1.0.0 copy-files
 > copy-files-from-to
@@ -21,6 +21,7 @@ rendering chunks...
 Reading copy instructions from file package.json
 
 Starting copy operation in "default" mode:
+ ✓ Copied [binary] assets/BG_Music_Woods.mp3 to dist/assets/BG_Music_Woods.mp3
  ✓ Copied [binary] assets/sceneRoot.glb to dist/assets/sceneRoot.glb
  ✓ Copied [ utf8 ] node_modules/@needle-tools/engine/include/console/ConsoleReroute.js to dist/include/console/ConsoleReroute.js
  ✓ Copied [ utf8 ] node_modules/@needle-tools/engine/include/draco/draco_decoder.js to dist/include/draco/draco_decoder.js
@@ -75,21 +76,46 @@ GLB files in E:\Projects\UnityProjects\PersonalPortfolio\Needle\MainPortfolio\di
   'E:/Projects/UnityProjects/PersonalPortfolio/Needle/MainPortfolio/dist/assets/sceneRoot.glb'
 ]
 now packing: E:/Projects/UnityProjects/PersonalPortfolio/Needle/MainPortfolio/dist/assets/sceneRoot.glb
+READ KHR_animation_pointer
 READ NEEDLE_gameobject_data
 READ NEEDLE_components
+READ NEEDLE_persistent_assets
 READ NEEDLE_lightmaps
 READ NEEDLE_lighting_settings
 READ EXT_texture_exr
+READ NEEDLE_compression_texture
 toktx: Found KTX-Software v4.1.0-rc3.
 toktx:version: 4.1.0-rc3
-Added 78184 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--3184911941.bin
-Added 1401000 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-22840081.bin
-Added 877800 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--789218747.bin
+> Using cached texture House_Normal (0)
+Added 1388936 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--2444281878.bin
+> Using cached texture House_AlbedoTransparency (2)
+> Using cached texture House_MetallicSmoothness (3)
+Added 102308 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--3762219574.bin
+Added 244080 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--3536772531.bin
+Added 2721052 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-1121153891.bin
+Added 1367320 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--2259786283.bin
+Added 282916 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--2364540482.bin
+Added 231328 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--744778780.bin
+Added 2398128 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--598362085.bin
+Added 1089512 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-1533603759.bin
+Added 74688 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-774475091.bin
+Added 1125936 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--3008091129.bin
+Added 25576 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--1304486694.bin
+Added 606700 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-1778232627.bin
+Added 69080 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-107520029.bin
+Added 760952 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-681086097.bin
+Added 514592 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--1580440499.bin
+Added 770348 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image--279680185.bin
+toktx:texture(Back_Arrow): Spawning → toktx --genmipmap --uastc 2 --zcmp 18 --threads 2.1818181818181817 C:\Users\Kushagra\AppData\Local\Temp/gltf-transform/JWqXkJ_21.ktx2 C:\Users\Kushagra\AppData\Local\Temp/gltf-transform/JWqXkJ_21.png
+Added 11338 bytes to cache at C:\Users\Kushagra\AppData\Local\Temp\Needle\build-pipeline-cache/image-520829482.bin
 [KHR_draco_mesh_compression] Compression options: {"method":1,"encodeSpeed":5,"decodeSpeed":5,"quantizationBits":{"POSITION":14,"NORMAL":10,"COLOR":8,"TEX_COORD":12,"GENERIC":12},"quantizationVolume":"mesh"}
-[KHR_draco_mesh_compression] Compressed 2 primitives.
+[KHR_draco_mesh_compression] Compressed 58 primitives.
+WRITE KHR_animation_pointer
 WRITE NEEDLE_gameobject_data
 WRITE NEEDLE_components
+WRITE NEEDLE_persistent_assets
 WRITE NEEDLE_lightmaps
 WRITE NEEDLE_lighting_settings
 WRITE EXT_texture_exr
-Compressing done in 0.2 sec, 3.6 MB → 2.7 MB: E:/Projects/UnityProjects/PersonalPortfolio/Needle/MainPortfolio/dist/assets/sceneRoot.glb
+WRITE NEEDLE_compression_texture
+Compressing done in 0.5 sec, 19.2 MB → 16.2 MB: E:/Projects/UnityProjects/PersonalPortfolio/Needle/MainPortfolio/dist/assets/sceneRoot.glb
